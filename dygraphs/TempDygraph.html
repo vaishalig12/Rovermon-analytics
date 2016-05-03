@@ -1,0 +1,26 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript"
+  src="dygraph-combined-dev.js"></script>
+</head>
+<body>
+<div id="graphdiv" style="width: 800px; height: 600px;"></div>
+<script type="text/javascript">
+  g = new Dygraph(
+
+    // containing div
+    document.getElementById("graphdiv"),
+
+    // CSV or path to a CSV file.
+    "http://localhost/rmonTempsec.csv",
+    {
+      rollPeriod: 7,
+      
+    }
+  );
+
+
+</script>
+</body>
+</html>

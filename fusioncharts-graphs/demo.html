@@ -1,0 +1,40 @@
+<html>
+<head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="canvasjs.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var dataPoints = [];
+
+            var chart = new CanvasJS.Chart("chartContainer",
+            {
+                    title: {
+                        text: "Basic Column Chart"
+                    },
+                    data: [
+                    {
+                        dataPoints: []
+                    }]
+            });
+
+            // Ajax request for getting JSON data
+            //Replace data.php with your JSON API's url
+
+            $.getJSON("http://localhost:3300/fuelPrices", function (data) {
+
+                for (var i = 0; i < data.length; i++) {
+
+                    dataPoints.push({ label: data[i].source, y: data[i].sourcecount });
+                }
+
+                chart.options.data[0].dataPoints = dataPoints;
+                chart.render();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="chartContainer" style="width: 50%; height: 300px;"></div>
+</body>
+</html>
