@@ -1,0 +1,5 @@
+
+@media (min-width: 768px){
+  #wrapper {padding-right: 0; padding-left: 225px;}
+  .side-nav{right: auto;left: 0;}
+}

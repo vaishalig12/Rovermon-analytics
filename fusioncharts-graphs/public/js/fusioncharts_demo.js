@@ -3,13 +3,13 @@ var chartData;
 $(function(){
   $.ajax({
 
-    url: 'http://localhost:3300/analyticsDB',
+    url: 'http://localhost:3300/randomData',
     type: 'GET',
     success : function(data) {
       chartData = data;
       
       var chartProperties = {
-        "caption": "Variation of sensor data",
+        "caption": "Variation of Random sensor data",
         //"numberprefix": "Rs",
         "xAxisName": "Timeline",
         "yAxisName": "Values"

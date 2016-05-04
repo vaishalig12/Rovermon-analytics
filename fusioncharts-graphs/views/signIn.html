@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="signin page for predefined users">
+        <meta name="author" content="Shreyasi Vad">
+
+        <title>RoverMon SignIn Page </title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="css/sb-admin.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+        <!--high chart-->
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/signIn.js"></script>
+
+    </head>
+
+    <body>
+
+        <div id="wrapper">
+            <!-- video background -->
+            <video autoplay  poster="img/215028_permukaan-planet-mars_663_382.jpg" id="bgvid" loop>
+                <source src="img/Mars_Rover_First_Video_Footage_-_Curiosity_Rover_P.webm" type="video/webm">
+                <source src="img/Mars Rover First Video Footage - Curiosity Rover Possibility.mp4" type="video/mp4">
+            </video>
+
+            <div id="signInDev">
+                <h1>RoverMon</h1>
+                <div class="signIncontainer">
+
+                    <form class="form-signin">
+                        <h2 class="form-signin-heading">Please sign in</h2>
+                        <label for="inputEmail" class="sr-only">Email address</label>
+                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                        <label for="inputPassword" class="sr-only">Password</label>
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="remember-me"> Remember me
+                            </label>
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                    </form>
+
+                </div> <!-- /container -->
+
+                <!--    <button onclick="location.href='/home'">SignIn
+</button> -->
+            </div>
+        </div>
+
+    </body>
+</html>

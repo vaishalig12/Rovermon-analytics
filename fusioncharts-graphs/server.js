@@ -31,7 +31,7 @@ function getData(responseObj){
     for ( index in docs){
       var doc = docs[index];
       //category array
-      var time = doc['timestamp'];
+      var time = doc[''];
       //series 1 values array
       var value = doc['value1'];
       //series 2 values array

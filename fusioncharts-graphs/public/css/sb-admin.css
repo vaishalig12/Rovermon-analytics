@@ -1,0 +1,483 @@
+/*!
+* Start Bootstrap - SB Admin Bootstrap Admin Template (http://startbootstrap.com)
+* Code licensed under the Apache License v2.0.
+* For details, see http://www.apache.org/licenses/LICENSE-2.0.
+*/
+
+/* Global Styles */
+
+body {
+    margin-top: 100px;
+    background-color: #222;
+}
+
+@media(min-width:768px) {
+    body {
+        margin-top: 50px;
+        background-image: url(../img/bk_img2.jpg);
+    }
+}
+
+#wrapper {
+    padding-right: 0; //changed to remove side panel
+}
+
+#page-wrapper {
+    width: 100%;
+    padding: 0;
+    background-color: #222;
+    background-image: url(../img/bk_img2.jpg);
+}
+
+.huge {
+    font-size: 50px;
+    line-height: normal;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-right: 0; //changed to remove side panel
+    }
+
+    #page-wrapper {
+        padding: 10px;
+    }
+}
+
+/* Top Navigation */
+
+.top-nav {
+    padding: 0 15px;
+}
+
+.top-nav>li {
+    display: inline-block;
+    float: left;
+}
+
+.top-nav>li>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 20px;
+    color: #999;
+}
+
+.top-nav>li>a:hover,
+.top-nav>li>a:focus,
+.top-nav>.open>a,
+.top-nav>.open>a:hover,
+.top-nav>.open>a:focus {
+    color: #fff;
+    background-color: #000;
+}
+
+.top-nav>.open>.dropdown-menu {
+    float: left;
+    position: absolute;
+    margin-top: 0;
+    border: 1px solid rgba(0,0,0,.15);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.top-nav>.open>.dropdown-menu>li>a {
+    white-space: normal;
+}
+
+ul.message-dropdown {
+    padding: 0;
+    max-height: 250px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+li.message-preview {
+    width: 275px;
+    border-bottom: 1px solid rgba(0,0,0,.15);
+}
+
+li.message-preview>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+li.message-footer {
+    margin: 5px 0;
+}
+
+ul.alert-dropdown {
+    width: 200px;
+}
+
+/* Side Navigation */
+
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 51px;
+        right: 0;
+        width: 225px;
+        margin-right: 0;//changed to remove side panel
+        border: none;
+        border-radius: 0;
+        overflow-y: auto;
+        background-color: #222;
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+    }
+
+    .side-nav>li>a {
+        width: 225px;
+    }
+
+    .side-nav li a:hover,
+    .side-nav li a:focus {
+        outline: none;
+        background-color: #000 !important;
+    }
+}
+
+.side-nav>li>ul {
+    padding: 0;
+}
+
+.side-nav>li>ul>li>a {
+    display: block;
+    padding: 10px 15px 10px 38px;
+    text-decoration: none;
+    color: #999;
+}
+
+.side-nav>li>ul>li>a:hover {
+    color: #fff;
+}
+
+/* Flot Chart Containers */
+
+.flot-chart {
+    display: block;
+    height: 400px;
+}
+
+.flot-chart-content {
+    width: 100%;
+    height: 100%;
+}
+
+/* Custom Colored Panels */
+
+.huge {
+    font-size: 40px;
+}
+
+.panel-green {
+    border-color: #5cb85c;
+}
+
+.panel-green > .panel-heading {
+    border-color: #5cb85c;
+    color: #fff;
+    background-color: #5cb85c;
+}
+
+.panel-green > a {
+    color: #5cb85c;
+}
+
+.panel-green > a:hover {
+    color: #3d8b3d;
+}
+
+.panel-red {
+    border-color: #d9534f;
+}
+
+.panel-red > .panel-heading {
+    border-color: #d9534f;
+    color: #fff;
+    background-color: #d9534f;
+}
+
+.panel-red > a {
+    color: #d9534f;
+}
+
+.panel-red > a:hover {
+    color: #b52b27;
+}
+
+.panel-yellow {
+    border-color: #f0ad4e;
+}
+
+.panel-yellow > .panel-heading {
+    border-color: #f0ad4e;
+    color: #fff;
+    background-color: #f0ad4e;
+}
+
+.panel-yellow > a {
+    color: #f0ad4e;
+}
+
+.panel-yellow > a:hover {
+    color: #df8a13;
+}
+
+/* shine effect for panel meter
+.panel-white {
+}
+.panel-white:hover {
+}
+.panel-white:after {
+content: "";
+position: absolute;
+top: 0px;
+left: 0px;
+width: 0%;
+height: 100%;
+background-color: rgba(255,255,255,0.4);
+-webkit-transition: none;
+-moz-transition: none;
+-ms-transition: none;
+-o-transition: none;
+transition: none;
+}
+.panel-white:hover:after {
+width: 120%;
+background-color: rgba(255,255,255,0);
+-webkit-transition: all 0.5s ease-out;
+-moz-transition: all 0.5s ease-out;
+-ms-transition: all 0.5s ease-out;
+-o-transition: all 0.5s ease-out;
+transition: all 0.8s ease-out;
+}
+*/
+
+.transparent {
+    /*
+    opacity: 0.6;
+    background-color: black;
+    */
+    background-color:rgba(0,0,0,0.6); 
+}
+
+.trans {
+    opacity: 0.7;
+}
+
+.shadow {
+    background: rgba(0,0,0,0.35);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+.panel-body > b {
+    color: aliceblue;
+}
+
+#drpdwnBold{
+    color: aliceblue;
+}
+
+.map {
+    width: inherit;
+    height: 400px;
+}
+
+.btn-success {
+    height: 70px;
+    color: black;
+    width:80px;
+}
+
+.btn-danger,.btn-warning {
+    height: 70px;
+    color: black;
+}
+
+.col-gap {
+    column-gap: 10px;
+    -webkit-column-gap: 40px;
+}
+
+.panel-padding {
+    align-content: center;
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    padding-left: 120px;
+}
+.onoffswitch {
+    position: relative; width: 120px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+   content: "START REC";
+    padding-right: 21px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+.onoffswitch-inner:after {
+    content: "REC";
+    padding-left: 40px;
+    background-color: #34A7C1; color: #FFFFFF; 
+}
+.onoffswitch-switch {
+    display: block; width: 18px; margin: 13px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 85px;
+    border: 2px solid #999999; border-radius: 20px;
+    transition: all 0.3s ease-in 0s; 
+    padding-top: 20px;
+    padding-bottom: 4px;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+
+.padding{
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+.font{
+    font-family: Trebuchet,Arial, sans-serif;
+    font-weight: bold; 
+}
+
+.sesspad{
+    padding-top: 10px;
+    padding-right: 10px;
+}
+/*Added or embedding video in signIn page*/
+video { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+ background: url('../img/215028_permukaan-planet-mars_663_382.jpg') no-repeat;
+  background-size: cover;
+  transition: 1s opacity;
+}
+.stopfade { 
+   opacity: .5;
+}
+#signInDev { 
+  font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+  font-weight:100; 
+  background: rgba(0,0,0,0.3);
+  color: white;
+  padding: 2rem;
+  width: 33%;
+  margin-left:45rem;
+    margin-top: 190px;
+  font-size: 1.2rem;
+}
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  letter-spacing: .3rem;
+}
+#signInDev button { 
+  display: block;
+  width: 80%;
+  padding: .4rem;
+  border: none; 
+  margin: 1rem auto; 
+  font-size: 1.3rem;
+  background: rgba(255,255,255,0.23);
+  color: #fff;
+  border-radius: 3px; 
+  cursor: pointer;
+  transition: .3s background;
+}
+#signInDev button:hover { 
+   background: rgba(0,0,0,0.5);
+}
+
+a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  background:rgba(0,0,0,0.5);
+  padding: .5rem;
+  transition: .6s background; 
+}
+a:hover{
+  background:rgba(0,0,0,0.9);
+}
+@media screen and (max-width: 500px) { 
+  div{width:70%;} 
+}
+@media screen and (max-device-width: 800px) {
+  html { background: url(../img/215028_permukaan-planet-mars_663_382.jpg) #000 no-repeat center center fixed; }
+  #bgvid { display: none; }
+}
+input:required {
+	border: 1px solid red;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+    align-content: center;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
