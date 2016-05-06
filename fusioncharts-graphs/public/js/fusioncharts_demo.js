@@ -12,7 +12,8 @@ $(function(){
         "caption": "Variation of Random sensor data",
         //"numberprefix": "Rs",
         "xAxisName": "Timeline",
-        "yAxisName": "Values"
+        "yAxisName": "Values",
+        "showValues": "0"
       };
 
       var categoriesArray = [{

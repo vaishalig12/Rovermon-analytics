@@ -24,14 +24,12 @@ function getData(responseObj){
   //use the find() API and pass an empty query object to retrieve all records
   
 
-   dbObject.collection("rmonTempmin").find({}).toArray(function(err, docs){
+   dbObject.collection("rmonMPUmin").find({}).toArray(function(err, docs){
     if ( err ) throw err;
     var timeArray = [];
     var value1 = [];
     var value2 = [];
     var value3 = [];
-    var value4 = [];
-    var value5 = [];
     //var dieselPrices = [];
 
     for ( index in docs){
@@ -42,43 +40,29 @@ function getData(responseObj){
       var val1 = doc['value1'];
       var val2 = doc['value2'];
       var val3 = doc['value3'];
-      var val4 = doc['value4'];
-      var val5 = doc['value5'];
       //series 2 values array
       //var diesel = doc['diesel'];
       timeArray.push({"label": time});
       value1.push({"value" : val1});
       value2.push({"value" : val2});
       value3.push({"value" : val3});
-      value4.push({"value" : val4});
-      value5.push({"value" : val5});
       //dieselPrices.push({"value" : diesel});
     }
 
     var MPUData = [
       {
-        "seriesname" : "Temp 1",
+        "seriesname" : "MPU 1",
         "data" : value1
       }
       ,
       {
-        "seriesname" : "Temp 2",
+        "seriesname" : "MPU 2",
         "data": value2
       }
       ,
       {
-        "seriesname" : "Temp 3",
+        "seriesname" : "MPU 3",
         "data": value3
-      }
-      ,
-      {
-        "seriesname" : "Temp 4",
-        "data": value4
-      }
-      ,
-      {
-        "seriesname" : "Temp 5",
-        "data": value5
       }
     ];
 

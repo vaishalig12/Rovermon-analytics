@@ -22,16 +22,10 @@ MongoClient.connect(dbHost, function(err, db){
 
 function getData(responseObj){
   //use the find() API and pass an empty query object to retrieve all records
-  
-
-   dbObject.collection("rmonTempmin").find({}).toArray(function(err, docs){
+  dbObject.collection("rmonRandommin").find({}).toArray(function(err, docs){
     if ( err ) throw err;
     var timeArray = [];
-    var value1 = [];
-    var value2 = [];
-    var value3 = [];
-    var value4 = [];
-    var value5 = [];
+    var sensor = [];
     //var dieselPrices = [];
 
     for ( index in docs){
@@ -39,57 +33,27 @@ function getData(responseObj){
       //category array
       var time = doc[''];
       //series 1 values array
-      var val1 = doc['value1'];
-      var val2 = doc['value2'];
-      var val3 = doc['value3'];
-      var val4 = doc['value4'];
-      var val5 = doc['value5'];
+      var value = doc['value1'];
       //series 2 values array
       //var diesel = doc['diesel'];
       timeArray.push({"label": time});
-      value1.push({"value" : val1});
-      value2.push({"value" : val2});
-      value3.push({"value" : val3});
-      value4.push({"value" : val4});
-      value5.push({"value" : val5});
+      sensor.push({"value" : value});
       //dieselPrices.push({"value" : diesel});
     }
 
-    var MPUData = [
+    var dataset = [
       {
-        "seriesname" : "Temp 1",
-        "data" : value1
-      }
-      ,
-      {
-        "seriesname" : "Temp 2",
-        "data": value2
-      }
-      ,
-      {
-        "seriesname" : "Temp 3",
-        "data": value3
-      }
-      ,
-      {
-        "seriesname" : "Temp 4",
-        "data": value4
-      }
-      ,
-      {
-        "seriesname" : "Temp 5",
-        "data": value5
+        "seriesname" : "Sensor Value",
+        "data" : sensor
       }
     ];
 
-    var response2 = {
-      "dataset" : MPUData,
+    var response = {
+      "dataset" : dataset,
       "categories" : timeArray
     };
-    responseObj.json(response2);
+    responseObj.json(response);
   });
-
-
 }
 
 //create express app
@@ -105,10 +69,9 @@ app.set('view engine', 'handlebars');
 
 //Defining middleware to serve static files
 app.use('/public', express.static('public'));
-app.get("/randomData", function(req, res1){
-  getData(res1);
+app.get("/randomData", function(req, res){
+  getData(res);
 });
-
 app.get("/", function(req, res){
   res.render("chart");
 });
