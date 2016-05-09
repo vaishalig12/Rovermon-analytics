@@ -30,7 +30,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="/public/js/sensor.js"></script>
-        <script type="text/javascript" src="/public/js/dygraph-combined-dev.js"></script>
+        
     <title>Analytics</title>
 </head>
 <body>
@@ -75,35 +75,15 @@
                             <a href="index.html"></a>
                         </li>
                         <li>
-                            <a href="charts.html"><i class="fa fa-fw fa-dashboard"></i> Sensor 1</a>
+                            <a href="charts.html"><i class="fa fa-fw fa-dashboard"></i>Temperature Sensors</a>
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-fw fa-dashboard"></i> Sensor 2</a>
+                            <a href="tables.html"><i class="fa fa-fw fa-dashboard"></i>MPU Sensors</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-fw fa-dashboard"></i> Sensor 3</a>
+                            <a href="forms.html"><i class="fa fa-fw fa-dashboard"></i>Random Sensors</a>
                         </li>
-                        <li>
-                            <a href="bootstrap-elements.html"><i class="fa fa-fw fa-dashboard"></i> Sensor 4</a>
-                        </li>
-                        <li>
-                            <a href="bootstrap-grid.html"><i class="fa fa-fw fa-dashboard"></i> Sensor 5</a>
-                        </li>
-                        <li>
-                            <a href="bootstrap-grid.html"><i class="fa fa-fw fa-dashboard"></i> Sensor 6</i></a>
-                    </li>
-                <li>
-                    <a href="blank-page.html"><i class="fa fa-fw fa-dashboard"></i> Sensor 7</a>
-                </li>
-                <li>
-                    <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> Sensor 8</a>
-                </li>
-                <li>
-                    <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> Sensor 9</a>
-                </li>
-                <li>
-                    <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> Sensor 10</a>
-                </li>
+                        
                 </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -139,7 +119,8 @@
       {{{body}}}
     </div>
 
-    <div class="container" id="graphdiv" style="width: 800px; height: 600px;"></div>
+
+    
                             </div>
                         </div>
                     </div>
@@ -167,21 +148,6 @@
     <script src="/public/js/fusioncharts.js"></script>
     <script src="/public/js/fusioncharts.charts.js"></script>
     <script src="/public/js/fusioncharts.theme.zune.js"></script>
-    <script type="text/javascript">
-  g = new Dygraph(
-
-    // containing div
-    document.getElementById("graphdiv"),
-
-    // CSV or path to a CSV file.
-    "http://localhost/rmonMPUsec.csv",
-    {
-      rollPeriod: 7,
-      
-    }
-  );
-
-
-</script>
+    
 </body>
 </html>

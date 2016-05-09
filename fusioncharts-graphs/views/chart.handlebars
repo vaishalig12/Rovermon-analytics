@@ -1,11 +1,56 @@
+<script type="text/javascript" src="/public/js/dygraph-combined-dev.js"></script>
 <div id="table-location">
 
 </div>
 <br/>
-<!-- Location where the chart will be added -->
-<div id="chart-location">
+<!-- Location where the charts will be added -->
+<div id="chart-location1">
 
 </div>
+<div id="graphdiv_temp" style="width: 1000px; height: 600px;  background:#D6D6D6"></div>
+
+<div id="chart-location2">
+
+</div>
+<div id="graphdiv_mpu" style="width: 1000px; height: 600px; background:#D6D6D6"></div>
+
+
+<div id="chart-location3">
+
+</div>
+<script type="text/javascript">
+  g = new Dygraph(
+
+    // containing div
+    document.getElementById("graphdiv_temp"),
+
+    // CSV or path to a CSV file.
+    "http://localhost/rmonTempsec.csv",
+    {
+      rollPeriod: 7,
+      
+    }
+  );
+
+
+</script>
+<script type="text/javascript">
+  g = new Dygraph(
+
+    // containing div
+    document.getElementById("graphdiv_mpu"),
+
+    // CSV or path to a CSV file.
+    "http://localhost/rmonMPUsec.csv",
+    {
+      rollPeriod: 7,
+      
+    }
+  );
+
+
+</script>
+
 <script id="tabular-template" type="text/html">
 <h2>Tabular Data</h2>
 <table class="table table-bordered">

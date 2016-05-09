@@ -20,7 +20,7 @@ MongoClient.connect(dbHost, function(err, db){
   dbObject = db;
 });
 
-function getData(responseObj){
+function getTempData(responseObj){
   //use the find() API and pass an empty query object to retrieve all records
   
 
@@ -55,7 +55,7 @@ function getData(responseObj){
       //dieselPrices.push({"value" : diesel});
     }
 
-    var MPUData = [
+    var tempData = [
       {
         "seriesname" : "Temp 1",
         "data" : value1
@@ -83,6 +83,63 @@ function getData(responseObj){
     ];
 
     var response2 = {
+      "dataset" : tempData,
+      "categories" : timeArray
+    };
+    responseObj.json(response2);
+  });
+
+
+}
+
+
+function getMPUData(responseObj){
+  //use the find() API and pass an empty query object to retrieve all records
+  
+
+   dbObject.collection("rmonMPUmin").find({}).toArray(function(err, docs){
+    if ( err ) throw err;
+    var timeArray = [];
+    var value1 = [];
+    var value2 = [];
+    var value3 = [];
+    //var dieselPrices = [];
+
+    for ( index in docs){
+      var doc = docs[index];
+      //category array
+      var time = doc[''];
+      //series 1 values array
+      var val1 = doc['value1'];
+      var val2 = doc['value2'];
+      var val3 = doc['value3'];
+      //series 2 values array
+      //var diesel = doc['diesel'];
+      timeArray.push({"label": time});
+      value1.push({"value" : val1});
+      value2.push({"value" : val2});
+      value3.push({"value" : val3});
+      //dieselPrices.push({"value" : diesel});
+    }
+
+    var MPUData = [
+      {
+        "seriesname" : "MPU 1",
+        "data" : value1
+      }
+      ,
+      {
+        "seriesname" : "MPU 2",
+        "data": value2
+      }
+      ,
+      {
+        "seriesname" : "MPU 3",
+        "data": value3
+      }
+    ];
+
+    var response2 = {
       "dataset" : MPUData,
       "categories" : timeArray
     };
@@ -90,6 +147,43 @@ function getData(responseObj){
   });
 
 
+}
+
+
+function getData(responseObj){
+  //use the find() API and pass an empty query object to retrieve all records
+  dbObject.collection("rmonRandommin").find({}).toArray(function(err, docs){
+    if ( err ) throw err;
+    var timeArray = [];
+    var sensor = [];
+    //var dieselPrices = [];
+
+    for ( index in docs){
+      var doc = docs[index];
+      //category array
+      var time = doc[''];
+      //series 1 values array
+      var value = doc['value1'];
+      //series 2 values array
+      //var diesel = doc['diesel'];
+      timeArray.push({"label": time});
+      sensor.push({"value" : value});
+      //dieselPrices.push({"value" : diesel});
+    }
+
+    var dataset = [
+      {
+        "seriesname" : "Sensor Value",
+        "data" : sensor
+      }
+    ];
+
+    var response = {
+      "dataset" : dataset,
+      "categories" : timeArray
+    };
+    responseObj.json(response);
+  });
 }
 
 //create express app
@@ -105,6 +199,14 @@ app.set('view engine', 'handlebars');
 
 //Defining middleware to serve static files
 app.use('/public', express.static('public'));
+app.get("/tempData", function(req, res1){
+  getTempData(res1);
+});
+
+app.get("/MPUData", function(req, res1){
+  getMPUData(res1);
+});
+
 app.get("/randomData", function(req, res1){
   getData(res1);
 });
